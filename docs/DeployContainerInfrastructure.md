@@ -169,5 +169,14 @@ AKS_CLUSTER_NAME=$DEMO_TAG
 az aks create --resource-group $AKS_RESOURCE_GROUP --name $AKS_CLUSTER_NAME --service-principal $CLUSTER_SERVICE_PRINCIPAL_APP_ID --client-secret $CLUSTER_SP_LOOKUP_PASSWORD --ssh-key-value $SSH_KEY_PUB_LOCAL_PATH --tags "AppName=$DEMO_TAG"
 ```
 
+## Cleanup resources
+
+All the resources are contained in two resource groups.
+
+```bash
+az group delete --name aks-demo101-cluster
+az group delete --name aks-demo101-common
+```
+
 <!--References -->
 [1]: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
